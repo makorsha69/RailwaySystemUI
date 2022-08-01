@@ -26,4 +26,7 @@ export class SharedService {
   getAllUserDetails():Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl+'/User/GetAllUser()')
     }
+  EmailService(name:any,reciever:any){
+    return this.http.post<User>(this.APIUrl+'/User/EmailService',name,reciever)
+  }
 }

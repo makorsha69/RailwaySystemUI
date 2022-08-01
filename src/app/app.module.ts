@@ -44,6 +44,7 @@ import { AuthGuard } from './Auth/auth.guard';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot ([
+      {path:'home', component:HomeComponent},
       {path:'signup', component:SignupComponent},
       {path:'login', component:LoginComponent},
       {path:'login/admin/dashboard', component:AdminDashboardComponent, canActivate:[AuthGuard]},

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { FooterService } from 'src/app/SharedService/footer.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(){}
   ngOnInit(): void {
   }
 

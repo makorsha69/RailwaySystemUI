@@ -31,8 +31,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
-
+    if(localStorage.getItem('token')!=null && this.LoginForm.value.email=="admin@admin.com")
+    this.router.navigate(['login/admin/dashboard']);
+    else
+    this.router.navigate(['login/user/dashboard']);
     }
 
   onSubmit() {

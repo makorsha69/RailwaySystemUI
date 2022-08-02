@@ -27,6 +27,8 @@ export class SharedService {
     return this.http.get<any[]>(this.APIUrl+'/User/GetAllUser()')
     }
   EmailService(name:any,reciever:any){
-    return this.http.post<User>(this.APIUrl+'/User/EmailService',name,reciever)
+    console.log(name);
+    console.log(reciever);
+    return this.http.get<any[]>(this.APIUrl+'/User/EmailService?name='+name+'&reciever='+reciever)
   }
 }

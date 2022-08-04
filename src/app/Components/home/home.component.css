@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 .banner-img {
     position: absolute;
-    width: 84.2rem;
+    width: 85.2rem;
     z-index: -1;
     float: right;
     
-    height: 35rem;
+    height: 40rem;
   }
 
 .banner_content {
@@ -53,6 +53,7 @@ h2{
  .card{
     margin-top: 30%;
     margin-left: 10%;
+    bottom: 1%
    
  }
  .card-img-top {

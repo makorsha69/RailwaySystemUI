@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './Auth/auth.guard';
+import { PassengerComponent } from './Components/passenger/passenger.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AuthGuard } from './Auth/auth.guard';
     AboutUsComponent,
     ContactUsComponent,
     UserNavbarComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    PassengerComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { AuthGuard } from './Auth/auth.guard';
       {path:'home', component:HomeComponent},
       {path:'signup', component:SignupComponent},
       {path:'login', component:LoginComponent},
+      {path:'add-passenger', component:PassengerComponent},
       {path:'login/admin/dashboard', component:AdminDashboardComponent, canActivate:[AuthGuard]},
       {path:'login/user/dashboard', component:UserDashboardComponent, canActivate:[AuthGuard]},
       {path: '', redirectTo: 'home', pathMatch: 'full'},

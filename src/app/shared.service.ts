@@ -14,7 +14,7 @@ export class SharedService {
 
   SaveUser(val:any){
     console.log(val);
-    return this.http.post<User>(this.APIUrl+'/User/SaveUser',val)
+    return this.http.post<any>(this.APIUrl+'/User/SaveUser',val)
   }
   Login(formData: any){
     console.log(formData);
@@ -27,8 +27,6 @@ export class SharedService {
     return this.http.get<any[]>(this.APIUrl+'/User/GetAllUser()')
     }
   EmailService(name:any,reciever:any){
-    console.log(name);
-    console.log(reciever);
-    return this.http.get<any[]>(this.APIUrl+'/User/EmailService?name='+name+'&reciever='+reciever)
+   return this.http.get<any[]>(this.APIUrl+'/User/EmailService?name='+name+'&reciever='+reciever)
   }
 }

@@ -16,8 +16,10 @@ body,
   background-image: url('src\assets\Images\train.jpg');
   /* background-color: #5356ad; */
   min-height: 100vh;
-  padding: 50px 0;
+  padding: 50px;
 }
+
+
 
 span {
   color:red;

@@ -1,0 +1,12 @@
+button{
+    margin-top: 10px;
+    border: none;
+   
+    text-emphasis: 5px;
+    border-radius: 8px;
+    width: 5rem;
+}
+input{
+    width:50rem;
+}
+.tbody:hover {background-color:rgb(210, 228, 222);}

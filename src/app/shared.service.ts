@@ -1,7 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from './Components/signup/signupmodel';
+import { passenger } from './Models/Passenger';
+import { Seats } from './Models/Seat';
+import { Train } from './Models/Train';
 
 
 @Injectable({
@@ -9,6 +12,7 @@ import { User } from './Components/signup/signupmodel';
 })
 export class SharedService {
   public userServices:User;
+  public TrainService:Train;
   readonly APIUrl ="https://localhost:44389/api"
   constructor(private http:HttpClient ) { }
 
@@ -29,4 +33,45 @@ export class SharedService {
   EmailService(name:any,reciever:any){
    return this.http.get<any[]>(this.APIUrl+'/User/EmailService?name='+name+'&reciever='+reciever)
   }
+  getAllTrains():Observable<Train>{
+    return this.http.get<Train>(this.APIUrl+'/Train/GetAllTrains');
+  }
+   saveTrain(val:any){
+    return this.http.post<Train>(this.APIUrl+'/Train/SaveTrain',val);
+  }
+  deleteTrain(id:number){
+    return this.http.delete<Train>(this.APIUrl+'/Train/DeleteTrain?TrainId='+id);
+  }
+  updateTrain(data:any){
+    return this.http.put<any>(this.APIUrl+'/Train/UpdateTrain',data);
+  }
+  SearchTrain(arr:any,dept:any,date:any){
+    return this.http.get<Train>(this.APIUrl+'/Train/SearchTrainsSeat2?ArrivalStation='+arr+'&DepartureStation='+dept+'&date='+date);
+  }
+  getTrainbyId(id:number){
+    return this.http.get<Train>(this.APIUrl+'/Train/GetTrain?TrainId='+id)
+  }
+  GetSeatById(id:number){
+    return this.http.get<Seats>(this.APIUrl+'/Seat/GetSeat?SeatId='+id);
+  }
+
+  getAllSeats():Observable<Seats>{
+    return this.http.get<Seats>(this.APIUrl+'/Seat/GetAllSeats()');
+  }
+  updateSeats(id:number,data:any){
+    return this.http.put<any>(this.APIUrl+'/Seat/UpdateSeat?SeatId='+id,data);
+  }
+
+  addPassenger(val:any){
+    return this.http.post<passenger>(this.APIUrl+'/Passenger/AddPassenger',val);
+  }
+  fareCal(tid:number,val:any,pid:number){
+    return this.http.get<any>(this.APIUrl+'/Booking/CalculateFare?TrainId='+tid+'&Class='+val+'&PassengerId='+pid);
+  }
+  getUserProfile(){
+    var tokenHeader = new HttpHeaders({'Authorization':'Bearer '+localStorage.getItem('token')})
+    console.log(tokenHeader);
+    return this.http.get(this.APIUrl+'/User/GetUserProfile', {headers : tokenHeader});
+  }
+
 }

@@ -1,0 +1,36 @@
+td,th {
+    text-align: center;
+  }
+ 
+  td{
+    background-color: aquamarine;
+    margin: 12px 12px 12px 12px;
+    padding: 12px 12px 12px 12px;
+  }
+  table{
+    border-collapse: separate;
+    border-spacing: 1px;
+    *border-collapse: expression('separate', cellSpacing='10px');
+  }
+  th{
+    background-color: rgb(215, 238, 238);
+  }
+  .passenger{
+    margin-top: 5rem;
+  }
+  .train{
+    margin-top: 2rem;
+  }
+  .fare{
+    margin-top: 2rem;
+  }
+  .container{
+   width: 1500px;
+   
+    border: solid 1px;
+  }
+  button{
+    margin-top: 3rem;
+    margin-left: 30rem;
+    margin-bottom: 2rem;
+  }

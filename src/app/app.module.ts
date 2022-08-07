@@ -35,6 +35,7 @@ import { TrainsComponent } from './Components/user-dashboard/trains/trains.compo
 import { AddPassengerComponent } from './Components/add-passenger/add-passenger.component';
 import { TicketComponent } from './Components/user-dashboard/ticket/ticket.component';
 import { BookingHistoryComponent } from './Components/user-dashboard/booking-history/booking-history.component';
+import { ReportComponent } from './Components/admin-dashboard/report/report.component';
 
 
 
@@ -61,6 +62,7 @@ import { BookingHistoryComponent } from './Components/user-dashboard/booking-his
     TrainsComponent,
     TicketComponent,
     BookingHistoryComponent,
+    ReportComponent,
    
     
   ],
@@ -93,6 +95,7 @@ import { BookingHistoryComponent } from './Components/user-dashboard/booking-his
       {path:'login/admin/dashboard', component:AdminDashboardComponent, canActivate:[AuthGuard]},
       {path:'login/user/dashboard', component:UserDashboardComponent, canActivate:[AuthGuard]},
       {path:'login/user/dashboard/ticket', component:TicketComponent, canActivate:[AuthGuard]},
+      {path:'login/admin/dashboard/report',component:ReportComponent,canActivate:[AuthGuard]},
       {path:'login/admin/dashboard/save-train', component:SaveTrainsComponent,canActivate:[AuthGuard]},
       {path:'login/admin/dashboard/save-seats', component:SaveSeatsComponent,canActivate:[AuthGuard]},
       {path: '', redirectTo: 'home', pathMatch: 'full'},

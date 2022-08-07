@@ -1,0 +1,47 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+    <form [formGroup]="formValue">
+        <div  class="form-group">
+          <label >Enter Train Id to get Report </label>
+            <input class="form-control" id="TrainId"  placeholder="TrainId" formControlName="TrainId">
+        </div>
+        
+        <button class="btn btn-primary" (click)="SearchPassenger()" >Search</button>
+      </form>
+</div>
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>PassengerId</th>
+            
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Class</th>
+            <th>BookingId</th>
+            <th>fare</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>SeatNum</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr class="tbody" *ngFor="let row of reportData" >
+            <td>{{row.PassengerId}}</td>
+            <td>{{row.PName}}</td>
+            <td>{{row.Age}}</td>
+            <td>{{row.gender}}</td>
+            <td>{{row.Class}}</td>
+            <td>{{row.BookingId}}</td>
+            <td>{{row.fare}}</td>
+            <td>{{row.Date}}</td>
+            <td>{{row.Status}}</td>
+            <td>{{row.SeatNum}}</td>
+            
+        </tr>
+       
+    </tbody>
+    
+    
+</table>

@@ -82,5 +82,14 @@ export class SharedService {
   saveSeat(val:any){
     return this.http.post<Seats>(this.APIUrl+'/Seat/SaveSeat',val);
   }
+  report(tid:number){
+    return this.http.get<any>(this.APIUrl+'/Passenger/GetReport?TrainId='+tid);
+  }
+  GetBookingId(fare:any){
+    return this.http.get<any>(this.APIUrl+'/Booking/GetBookingId?fare='+fare);
+  }
+  confirmBooking(bid:any){
+    return this.http.get<any>(this.APIUrl+'/Booking/ConfirmBooking?BookingId='+bid);
+  }
 
 }

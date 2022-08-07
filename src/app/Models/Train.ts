@@ -9,8 +9,10 @@ export class Train{
     departureStation="";
     distance="";
     isActive=true;
-    FirstAC:number=0;
-    SecondAC:number=0;
-    Sleeper:number= 0;
-    Total:number= 0;
+    seats:[{FirstAC:0;
+        SecondAC:0;
+        Sleeper:0;
+        Total:0}]
+    
+    
 }

@@ -33,6 +33,9 @@ import { BookingComponent } from './Components/user-dashboard/booking/booking.co
 import { TransactionComponent } from './Components/user-dashboard/transaction/transaction.component';
 import { TrainsComponent } from './Components/user-dashboard/trains/trains.component';
 import { AddPassengerComponent } from './Components/add-passenger/add-passenger.component';
+import { TicketComponent } from './Components/user-dashboard/ticket/ticket.component';
+import { BookingHistoryComponent } from './Components/user-dashboard/booking-history/booking-history.component';
+
 
 
 
@@ -56,6 +59,9 @@ import { AddPassengerComponent } from './Components/add-passenger/add-passenger.
     BookingComponent,
     TransactionComponent,
     TrainsComponent,
+    TicketComponent,
+    BookingHistoryComponent,
+   
     
   ],
   imports: [
@@ -75,14 +81,18 @@ import { AddPassengerComponent } from './Components/add-passenger/add-passenger.
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot ([
+      {path:'about-us', component:AboutUsComponent},
       {path:'home', component:HomeComponent},
       {path:'signup', component:SignupComponent},
       {path:'login', component:LoginComponent},
       {path:'login/user/dashboard/trains', component:TrainsComponent,canActivate:[AuthGuard]},
       {path:'login/user/dashboard/add-passenger', component:AddPassengerComponent,canActivate:[AuthGuard]},
       {path:'login/user/dashboard/booking',component:BookingComponent,canActivate:[AuthGuard]},
+      {path:'login/user/dashboard/transaction',component:TransactionComponent,canActivate:[AuthGuard]},
+      {path:'login/user/dashboard/booking-history',component:BookingHistoryComponent,canActivate:[AuthGuard]},
       {path:'login/admin/dashboard', component:AdminDashboardComponent, canActivate:[AuthGuard]},
       {path:'login/user/dashboard', component:UserDashboardComponent, canActivate:[AuthGuard]},
+      {path:'login/user/dashboard/ticket', component:TicketComponent, canActivate:[AuthGuard]},
       {path:'login/admin/dashboard/save-train', component:SaveTrainsComponent,canActivate:[AuthGuard]},
       {path:'login/admin/dashboard/save-seats', component:SaveSeatsComponent,canActivate:[AuthGuard]},
       {path: '', redirectTo: 'home', pathMatch: 'full'},

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-transaction',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transaction.component.css']
 })
 export class TransactionComponent implements OnInit {
+  formValue!:FormGroup;
+  TransactionForm = new FormGroup({
+    number : new FormControl('', [Validators.required, Validators.maxLength(16),Validators.minLength(13)]),
+    cvv : new FormControl('',[Validators.required , Validators.maxLength(3),Validators.minLength(3)]),
+    });
+    get number() {
+      return this.TransactionForm.get('number');
+    }
+    get cvv() {
+      return this.TransactionForm.get('cvv');
+    }
+ 
 
-  constructor() { }
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
-  }
+    
+  
 
+}
 }

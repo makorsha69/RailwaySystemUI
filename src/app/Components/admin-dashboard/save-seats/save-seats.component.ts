@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Seats } from 'src/app/Models/Seat';
-import { NavbarService } from 'src/app/navbar.service';
 
 import { SharedService } from 'src/app/shared.service';
 
@@ -14,10 +13,12 @@ export class SaveSeatsComponent implements OnInit {
   SeatModelObj: Seats = new Seats();
   seatData!:any;
   formValue !: FormGroup;
-  constructor(private shared:SharedService,private fb:FormBuilder,private nav:NavbarService) { }
+  trains!:any
+  showAdd !: boolean;
+  showUpdate !: boolean;
+  constructor(private shared:SharedService,private fb:FormBuilder) { }
 
   ngOnInit(): void {
-    this.nav.hide();
     this.getAllSeats();
     this.formValue=this.fb.group({
 
@@ -37,7 +38,8 @@ export class SaveSeatsComponent implements OnInit {
     });
   }
   onEdit(row:any){
-   
+    this.showAdd=false;
+    this.showUpdate=true;
     this.SeatModelObj.SeatId = row.SeatId;
     this.SeatModelObj.TrainId=row.TrainId;
     this.formValue.controls['FirstAC'].setValue(row.FirstAC);
@@ -59,5 +61,21 @@ export class SaveSeatsComponent implements OnInit {
     })
     
   }
+  clickAddSeat(){
+   
+  this.formValue.reset();
+  this.showAdd=true;
+  this.showUpdate=false;
+  }
+postSeatDetails(){
+  this.SeatModelObj.TrainId=this.formValue.value.TrainId;
+  this.SeatModelObj.FirstAC=this.formValue.value.FirstAC;
+  this.SeatModelObj.SecondAC=this.formValue.value.SecondAC;
+  this.SeatModelObj.Sleeper=this.formValue.value.Sleeper;
+  this.SeatModelObj.Total=this.formValue.value.Total
+  this.shared.saveSeat(this.SeatModelObj).subscribe((res)=>{
+    console.log(res);
+  });
+}
 
 }

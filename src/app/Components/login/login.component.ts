@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   constructor(private shared:SharedService, private router:Router, private nav:NavbarService) { }
 
   ngOnInit(): void {
+    this.nav.show();
 
     if(localStorage.getItem('token')!=null && this.LoginForm.value.email=="admin@admin.com")
     this.router.navigate(['login/admin/dashboard']);

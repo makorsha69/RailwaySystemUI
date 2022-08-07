@@ -1,0 +1,32 @@
+input{
+    width: 20rem;
+}
+#cvv{
+    width: 8rem;
+    height: 3rem;
+    border:none;
+}
+.container{
+    margin-top: 3rem;
+    border: solid 1px;
+    box-shadow: 5px 5px rgb(75, 71, 71) ;
+    height: 30rem;
+    width: 30rem;
+    padding-bottom: 4rem;
+}
+img{
+    width: 4rem;
+}
+button{
+    margin-top: 1rem;
+}
+span{
+    color: red;
+}
+.form-control{
+    border:none;
+}
+h2{
+    margin-left: 9rem;
+    font-size:x-large;
+}

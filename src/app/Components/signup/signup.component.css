@@ -19,6 +19,9 @@ body,
   
   
 }
+.form-control{
+  border:none;
+}
 .section-login .container {
   padding-left: 15px;
   padding-right: 15px;

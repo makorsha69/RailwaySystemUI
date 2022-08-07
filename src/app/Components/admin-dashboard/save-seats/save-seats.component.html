@@ -2,6 +2,7 @@
 <div class="container">
     <h2><b>Seat Details.</b></h2>
     
+    <button class="btn btn-success" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter" (click)="clickAddSeat()">Add Seats</button>
    
     <table class="table mt-4">
         <thead>
@@ -39,13 +40,19 @@
       <div class="modal-content">
         <div class="modal-header">
            
-          <h5  class="modal-title" id="exampleModalLongTitle">Update Train</h5>
+          <h5  class="modal-title" id="exampleModalLongTitle">Update Seat</h5>
           <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
             <form [formGroup]="formValue">
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">TrainId</label>
+                    <input type="text" class="form-control" id="TrainId"  placeholder="TrainId" formControlName="TrainId">
+    
+                </div>
                 
                 <div class="form-group">
                 <label for="exampleInputEmail1">FirstAC</label>
@@ -76,8 +83,8 @@
         </div>
         <div class="modal-footer">
           <button id="cancel" type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-         
-          <button  (click)="updateSeat()"type="button" class="btn btn-success">Update </button>
+          <button *ngIf="showAdd" (click)="postSeatDetails()"type="button" class="btn btn-success">Save </button>
+          <button *ngIf="showUpdate" (click)="updateSeat()"type="button" class="btn btn-success">Update </button>
         </div>
       </div>
     </div>

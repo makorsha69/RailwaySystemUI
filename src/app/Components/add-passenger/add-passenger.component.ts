@@ -13,7 +13,8 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class AddPassengerComponent implements OnInit {
   formValue!:FormGroup;
-  userId!:any;
+  userDetails!:any;
+  userID!:any;
   get pName() {
     return this.formValue.get('pName');
   }
@@ -35,7 +36,18 @@ export class AddPassengerComponent implements OnInit {
       gender:[''],
       class:['']
     });
-    this.userId=localStorage.getItem('token');
+    this.shared.getUserProfile().subscribe(
+      res=>{
+       this.userDetails=res;
+       console.log(this.userDetails);
+       console.log(this.userDetails.UserId);
+       localStorage.setItem('userId',JSON.stringify(this.userDetails.UserId));
+      },
+      err =>{
+       console.log(err);
+      },
+    );
+    
    
   }
   pModel:passenger = new passenger(); 
@@ -43,11 +55,13 @@ export class AddPassengerComponent implements OnInit {
   passengers:string;
   addPassenger(){
    
+    let user:any=localStorage.getItem("userId");
+    this.userID=JSON.parse(user);
+    this.pModel.userId=this.userID;
     this.pModel.pName=this.formValue.value.pName;
     this.pModel.age=this.formValue.value.age;
     this.pModel.gender=this.formValue.value.gender;
     this.pModel.class=this.formValue.value.class;
-    console.log(this.formValue.value.class);
     this.shared.addPassenger(this.pModel).subscribe((res)=>{
       console.log(res);
       
@@ -55,7 +69,7 @@ export class AddPassengerComponent implements OnInit {
       var json=localStorage.getItem("passengers")as string;
      var storeData= JSON.parse(json);
       console.log(storeData.PName);
-      this.router.navigateByUrl('/booking');
+      this.router.navigateByUrl('/login/user/dashboard/booking');
       
     })
    

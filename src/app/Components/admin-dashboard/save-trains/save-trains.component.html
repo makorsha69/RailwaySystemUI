@@ -32,7 +32,7 @@
                 <td>{{row.distance}}</td>
                 <td>{{row.isActive}}</td>
                 <td>
-                    <button (click)="onEdit(row)" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn btn-danger" style="margin-right: 5px;"><mat-icon>edit</mat-icon></button>
+                    <button (click)="onEdit(row)" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn btn-danger" style="margin-right: 5px;" style="margin-bottom:2.5px;"><mat-icon>edit</mat-icon></button>
                     <button (click)="deleteTrain(row.TrainId)" class="btn btn-danger"><mat-icon>delete</mat-icon></button>
                 </td>
             </tr>
@@ -58,7 +58,7 @@
                   <input type="text" class="form-control" id="TrainId"  placeholder="Enter TrainId" formControlName="TrainId">
                 </div>
                 <div class="form-group">
-                  <label >Last Name</label>
+                  <label >Train Name</label>
                   <input type="text" class="form-control" id="Name" placeholder="Enter  Name" formControlName="Name">
                 </div>
                 <div class="form-group">

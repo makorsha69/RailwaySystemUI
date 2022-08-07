@@ -19,7 +19,9 @@ body,
   padding: 50px;
 }
 
-
+.form-control{
+  border:none;
+}
 
 span {
   color:red;

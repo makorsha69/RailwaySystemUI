@@ -14,7 +14,6 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit(): void {
 
     this.nav.hide();
-
   }
 
 }

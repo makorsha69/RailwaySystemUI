@@ -65,13 +65,22 @@ export class SharedService {
   addPassenger(val:any){
     return this.http.post<passenger>(this.APIUrl+'/Passenger/AddPassenger',val);
   }
-  fareCal(tid:number,val:any,pid:number){
-    return this.http.get<any>(this.APIUrl+'/Booking/CalculateFare?TrainId='+tid+'&Class='+val+'&PassengerId='+pid);
+  fareCal(tid:number,val:any,pid:number,uid:number){
+    return this.http.get<any>(this.APIUrl+'/Booking/CalculateFare?TrainId='+tid+'&Class='+val+'&PassengerId='+pid+'&UserId='+uid);
   }
   getUserProfile(){
     var tokenHeader = new HttpHeaders({'Authorization':'Bearer '+localStorage.getItem('token')})
     console.log(tokenHeader);
     return this.http.get(this.APIUrl+'/User/GetUserProfile', {headers : tokenHeader});
+  }
+  bookingHistory(uid:number){
+    return this.http.get<any>(this.APIUrl+'/Booking/GetBookingHistory?UserId='+uid);
+  }
+  DelbookingHistory(bid:number){
+  return this.http.delete<any>(this.APIUrl+'/Booking/DeleteBooking?BookingId='+bid);
+  }
+  saveSeat(val:any){
+    return this.http.post<Seats>(this.APIUrl+'/Seat/SaveSeat',val);
   }
 
 }

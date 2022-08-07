@@ -20,8 +20,8 @@ span {
 .ticket-top {
 	border-top-left-radius: 19px;
 	border-top-right-radius: 19px;
-	background-color:aquamarine;
-	height: 62px;
+	background-color:rgb(66, 188, 209);
+	height: 60px;
 }
 
 .ticket-middle {
@@ -34,9 +34,9 @@ span {
 .ticket-bottom {
 	border-bottom-left-radius: 19px;
 	border-bottom-right-radius: 19px;
-	background-color:aquamarine;
+	background-color:rgb(66, 188, 209);
 	height: 68px;
-    margin-top: 14px;
+    margin-top: 3rem;
 }
 
 /* Top Strip Positioning */
@@ -85,11 +85,11 @@ span {
 }
 
 .middle-class {
-	width: 88px;
+	width: 100px;
 }
 
 .middle-type {
-	width: 213px;
+	width: 150px;
 }
 
 .middle-adult {
@@ -143,7 +143,7 @@ span {
 }
 
 .middle-valid {
-	width: 234px;
+	width: 90px;
 }
 
 
@@ -191,11 +191,16 @@ span {
 	width: 55px;
 	margin-left: 4.7%;
 }
-#main{padding-top: 20px;
-    align-content: center;
-    margin-left: 23rem;
+#main{
+    padding-top: 20px;
+    /* align-content: center; */
+    margin-left: 15rem;
     padding-bottom: 20px;
 }
 button{
-    margin-top: 5rem;
+    margin-top: 6rem;
+}
+#ticket{
+	margin-top: 7rem;
+	margin-left: 9rem;
 }

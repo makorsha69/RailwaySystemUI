@@ -1,64 +1,72 @@
+<app-user-navbar></app-user-navbar>
+<h3>To get your ticket please click on the download button:</h3>
 <div id="main">
-    <div class="ticket-main">
-        <div class="ticket-top">
-        </div>
+		<div class="ticket-main" id="ticket" #ticket>
+			<div class="ticket-top">
+			</div>
 
-        <div class="ticket-middle">
+			<div class="ticket-middle">
 
-            <div class="middle-row middle-1">
-                <span class="ticket-label middle-class">Class</span>
-                <span class="ticket-label middle-type">Ticket Type</span>
-                <span class="ticket-label middle-adult">Adult</span>
-                <span class="ticket-label middle-child">Child</span>
-            </div>
-                <div class="middle-row middle-1-1">
-                <span class="ticket-detail-large middle-class">STD</span>
-                <span class="ticket-detail middle-type">Anytime Day R</span>
-                <span class="ticket-detail middle-adult">One</span>
-                <span class="ticket-detail middle-child">Nil</span>
-                <span class="ticket-detail-large middle-rtn">RTN</span>
-            </div>
-            <div class="middle-row middle-2">
-                <span class="middle-railcard-spacer"></span>
-                <span class="ticket-label middle-startdate">Start Date</span>
-                <span class="ticket-label middle-number">Number</span>
-            </div>
-            <div class="middle-row middle-2-2">
-                <span class="ticket-detail-large middle-railcard-spacer">16-25</span>
-                <span class="ticket-detail middle-startdate">23&middot;MCH&middot;16</span>
-                <span class="ticket-detail middle-number">01234</span>
-                <span class="ticket-detail middle-longnumber">0123456789</span>
-            </div>
-            <div class="middle-row middle-3">
-                <span class="ticket-label middle-from">From</span>
-                <span class="ticket-label middle-valid">Valid Until</span>
-                <span class="ticket-label middle-price">Price</span>
-            </div>
-            <div class="middle-row middle-3-3">
-                <span class="ticket-detail middle-from">Tamworth *</span>
-                <span class="ticket-detail middle-valid">23&middot;MCH&middot;16</span>
-                <span class="ticket-detail middle-price">£5.30X</span>
-            </div>
-            <div class="middle-row middle-4">
-                <span class="ticket-label middle-to">To</span>
-                <span class="ticket-label middle-route">Route</span>
-                <span class="ticket-label middle-validity">Validity</span>
-            </div>
-            <div class="middle-row middle-4-4">
-                <span class="ticket-detail middle-to">Birmingham Stns</span>
-                <span class="ticket-detail-small middle-route">Any Permitted</span>
-                <span class="ticket-detail-small middle-validity">On Date Shown</span>
-            </div>
-        </div>
+				<div class="middle-row middle-1">
+					<span class="ticket-label middle-class">Train Id</span>
+                    <span class="ticket-label middle-class">Train Name</span>
+					<span class="ticket-label middle-type">Arriavl Station</span>
+					<span class="ticket-label middle-adult">Departure Station</span>
+					
+				</div>
+					<div *ngIf="trainData" class="middle-row middle-1-1">
+                    <span class="ticket-detail-large middle-class">{{trainData.TrainId}}</span>
+                    
+					<span class="ticket-detail-large middle-class">{{trainData.Name}}</span>
+                    
+					<span class="ticket-detail-large middle-type">{{trainData.ArrivalStation}}</span>
+					<span class="ticket-detail-large middle-class middle-type">{{trainData.DepartureStation}}</span>
+					
+					
+				</div>
+				<div  class="middle-row middle-2">
+					<span class="middle-railcard-spacer ticket-label">Arrival Date</span>
+					<span class="ticket-label middle-startdate">\Arrival Time</span>
+				    <span class="ticket-label middle-number">Departure Date</span>
+                    <span class="ticket-label middle-number">Departure Time</span>
+				</div>
+				<div *ngIf="trainData" class="middle-row middle-2-2">
+					<span class="ticket-detail middle-railcard-spacer">{{trainData.ArrivalDate}}</span>
+					<span class="ticket-detail middle-startdate">{{trainData.ArrivalTime}}</span>
+					<span class="ticket-detail middle-startdate">{{trainData.DepartureDate}}</span>
+					<span class="ticket-detail middle-longnumber">{{trainData.DepartureTime}}</span>
+				</div>
+				<div class="middle-row middle-3">
+					<span class="ticket-label middle-from">Passenger Name</span>
+					<span class="ticket-label middle-valid">Age</span>
+					<span class="ticket-label middle-valid">Gender</span>
+                    <span class="ticket-label middle-valid">Class</span>
+				</div>
+				<div *ngIf="pData"class="middle-row middle-3-3">
+					<span class="ticket-detail middle-from">{{pData.PName}}</span>
+					<span class="ticket-detail middle-valid">{{pData.Age}}</span>
+					<span class="ticket-detail middle-valid">{{pData.gender}}</span>
+                    <span class="ticket-detail middle-valid">{{pData.Class}}</span>
+				</div>
+				<div class="middle-row middle-4">
+					<span class="ticket-label middle-to">BookingId</span>
+					<span class="ticket-label middle-route">Seat Number</span>
+                    <span class="ticket-label middle-route">Fare</span>
+					
+				</div>
+				<div *ngIf="bookingData"class="middle-row middle-4-4">
+					<span class="ticket-detail middle-to">{{bookingData.BookingId}}</span>
+					<span class="ticket-detail middle-route">{{bookingData.SeatNum}}</span>
+					<span class="ticket-detail middle-route">{{bookingData.fare}}</span>
+				</div>
+			</div>
 
-        <div class="ticket-bottom">
-            <div class="ticket-logo-2-container">
-                <div class="ticket-logo"></div>
-            </div>
-            <div class="ticket-printed">
-                <span class="ticket-label">Printed 09:48 on 23-MCH-16</span>
-            </div>
-        </div>
-    </div>
-    <button class="btn btn-primary"> Download PDF</button>
-</div>
+			<div class="ticket-bottom">
+				<div class="ticket-logo-2-container">
+					<div class="ticket-logo"></div>
+				</div>
+				
+			</div>
+		</div>
+        <button class="btn btn-primary" (click)="Remove()"> Download PDF</button>
+	</div>

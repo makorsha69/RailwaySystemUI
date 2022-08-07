@@ -98,6 +98,7 @@ import { ReportComponent } from './Components/admin-dashboard/report/report.comp
       {path:'login/admin/dashboard/report',component:ReportComponent,canActivate:[AuthGuard]},
       {path:'login/admin/dashboard/save-train', component:SaveTrainsComponent,canActivate:[AuthGuard]},
       {path:'login/admin/dashboard/save-seats', component:SaveSeatsComponent,canActivate:[AuthGuard]},
+      {path:'login/admin/dashboard/ticket', component:TicketComponent,canActivate:[AuthGuard]},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
      ]),
   ],

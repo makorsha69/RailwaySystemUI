@@ -13,7 +13,7 @@ export class AdminNavbarComponent implements OnInit {
   ngOnInit(): void {
   }
   onLogout() {
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 }

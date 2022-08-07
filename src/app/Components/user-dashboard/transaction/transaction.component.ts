@@ -18,7 +18,7 @@ export class TransactionComponent implements OnInit {
     number : new FormControl('', [Validators.required, Validators.maxLength(16),Validators.minLength(13)]),
     cvv : new FormControl('',[Validators.required , Validators.maxLength(3),Validators.minLength(3)]),
     });
-    submitted=false;
+    
   passengerId: any;
     get number() {
       return this.TransactionForm.get('number');
@@ -41,6 +41,7 @@ loadData(){
     
 }
 PayNow(){
+
   var shareData:any=localStorage.getItem('fare');
   var pData:any=localStorage.getItem('passengers');
   this.pId=JSON.parse(pData);
@@ -57,7 +58,7 @@ PayNow(){
     alert("Payment Successful");
    
 });
-  this.router.navigateByUrl('/login/admin/dashboard/ticket');
+  this.router.navigateByUrl('login/user/dashboard/ticket');
 }
 
 }

@@ -13,7 +13,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class AddPassengerComponent implements OnInit {
   formValue!:FormGroup;
-  userDetails!:any;
+  submitted=false;
   userID!:any;
   get pName() {
     return this.formValue.get('pName');
@@ -36,17 +36,7 @@ export class AddPassengerComponent implements OnInit {
       gender:[''],
       class:['']
     });
-    this.shared.getUserProfile().subscribe(
-      res=>{
-       this.userDetails=res;
-       console.log(this.userDetails);
-       console.log(this.userDetails.UserId);
-       localStorage.setItem('userId',JSON.stringify(this.userDetails.UserId));
-      },
-      err =>{
-       console.log(err);
-      },
-    );
+    
     
    
   }
@@ -55,6 +45,7 @@ export class AddPassengerComponent implements OnInit {
   passengers:string;
   addPassenger(){
    
+    this.submitted=false;
     let user:any=localStorage.getItem("userId");
     this.userID=JSON.parse(user);
     this.pModel.userId=this.userID;

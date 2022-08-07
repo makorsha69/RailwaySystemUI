@@ -1,7 +1,7 @@
 <app-user-navbar></app-user-navbar>
 <div class="container">
     <h3>Add Passenger Details:</h3>
-    <form [formGroup]="formValue">
+    <form [formGroup]="formValue" (ngSubmit)="addPassenger()">
 
         <div class="form-control">
             <div *ngIf="pName?.touched && pName?.invalid" >
@@ -46,7 +46,7 @@
                   </mat-form-field>
                 </div>
         
-            <button class="btn btn-primary" (click)="addPassenger()">Submit</button>
+            <button class="btn btn-primary" [disabled]="!formValue.valid">Submit</button>
                   
         
     </form>

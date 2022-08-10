@@ -5,7 +5,6 @@ import { passenger } from 'src/app/Models/Passenger';
 import { SharedService } from 'src/app/shared.service';
 
 
-
 @Component({
   selector: 'app-add-passenger',
   templateUrl: './add-passenger.component.html',
@@ -53,6 +52,7 @@ export class AddPassengerComponent implements OnInit {
     this.pModel.age=this.formValue.value.age;
     this.pModel.gender=this.formValue.value.gender;
     this.pModel.class=this.formValue.value.class;
+    console.log(this.pModel);
     this.shared.addPassenger(this.pModel).subscribe((res)=>{
       console.log(res);
       
@@ -63,9 +63,5 @@ export class AddPassengerComponent implements OnInit {
       this.router.navigateByUrl('/login/user/dashboard/booking');
       
     })
-   
-     
-     
   }
-  
 }

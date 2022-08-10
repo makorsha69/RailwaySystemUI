@@ -1,6 +1,5 @@
 import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
-
 import { jsPDF } from 'jspdf';
 import { NavbarService } from 'src/app/navbar.service';
 

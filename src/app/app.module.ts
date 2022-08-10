@@ -32,10 +32,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { BookingComponent } from './Components/user-dashboard/booking/booking.component';
 import { TransactionComponent } from './Components/user-dashboard/transaction/transaction.component';
 import { TrainsComponent } from './Components/user-dashboard/trains/trains.component';
-import { AddPassengerComponent } from './Components/add-passenger/add-passenger.component';
 import { TicketComponent } from './Components/user-dashboard/ticket/ticket.component';
 import { BookingHistoryComponent } from './Components/user-dashboard/booking-history/booking-history.component';
 import { ReportComponent } from './Components/admin-dashboard/report/report.component';
+import { AddPassengerComponent } from './Components/user-dashboard/add-passenger/add-passenger.component';
 
 
 

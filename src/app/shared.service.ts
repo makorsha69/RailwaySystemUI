@@ -94,5 +94,4 @@ export class SharedService {
   getBookingbyId(bid:number){
     return this.http.get<any>(this.APIUrl+'/Booking/GetBooking?BookingId='+bid);
   }
-
 }

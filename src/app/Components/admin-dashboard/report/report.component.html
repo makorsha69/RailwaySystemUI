@@ -2,15 +2,16 @@
 <div class="container">
     <form [formGroup]="formValue">
         <div  class="form-group">
-          <label >Enter Train Id to get Report </label>
-            <input class="form-control" id="TrainId"  placeholder="TrainId" formControlName="TrainId">
+            <br>
+            <input class="form-control" id="TrainId"  placeholder="Enter the Train ID" formControlName="TrainId">
         </div>
         
         <button class="btn btn-primary" (click)="SearchPassenger()" >Search</button>
+        <button class="btn btn-info" style="margin-left:0.4rem" (click)="Download()"> Download Report</button>
       </form>
 </div>
-
-<table class="table mt-4">
+<div class="table-div">
+<table class="table mt-4" id="report" #report >
     <thead>
         <tr>
             <th>PassengerId</th>
@@ -42,6 +43,7 @@
         </tr>
        
     </tbody>
-    
+ 
     
 </table>
+</div>

@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import jsPDF from 'jspdf';
 import { Report } from 'src/app/Models/Report';
 import { NavbarService } from 'src/app/navbar.service';
 import { SharedService } from 'src/app/shared.service';
+
 
 
 @Component({
@@ -12,6 +14,7 @@ import { SharedService } from 'src/app/shared.service';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
+@ViewChild("report",{static:false}) el!: ElementRef;
 formValue!:FormGroup;
 report:Report = new Report();
 reportData:any;
@@ -34,6 +37,15 @@ reportData:any;
       }
       this.formValue.reset();
     })
+  }
+  Download(){
+    let pdf = new jsPDF('l','pt','a4');
+    pdf.html(this.el.nativeElement,{
+    callback:(pdf)=>{
+    pdf.save("Report.pdf");
+  }
+ });
+ 
   }
 
 }

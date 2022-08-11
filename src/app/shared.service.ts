@@ -94,4 +94,13 @@ export class SharedService {
   getBookingbyId(bid:number){
     return this.http.get<any>(this.APIUrl+'/Booking/GetBooking?BookingId='+bid);
   }
+  addTicket(pid:number,bid:number,tid:number){
+    return this.http.get<any>(this.APIUrl+'/Ticket/SaveTicket?PassengerId='+pid+'&BookingId='+bid+'&TrainId='+tid);
+  }
+  getTicket(pid:number,bid:number,tid:number){
+    return this.http.get<any>(this.APIUrl+'/Ticket/GetTicketModel?PassengerId='+pid+'&BookingId='+bid+'&TrainId='+tid);
+  }
+  reportStat(tid:number,val:any){
+    return this.http.get<any>(this.APIUrl+'/Passenger/GetReportStat?TrainId='+tid+'&Status='+val);
+  }
 }

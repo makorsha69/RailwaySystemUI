@@ -5,7 +5,7 @@
 			<div class="ticket-top">
 			</div>
 
-			<div class="ticket-middle">
+			<div *ngFor="let ticketData of ticketData" class="ticket-middle">
 
 				<div class="middle-row middle-1">
 					<span class="ticket-label middle-class">Train Id</span>
@@ -14,13 +14,13 @@
 					<span class="ticket-label middle-adult">Departure Station</span>
 					
 				</div>
-					<div *ngIf="trainData" class="middle-row middle-1-1">
-                    <span class="ticket-detail-large middle-class">{{trainData.TrainId}}</span>
+					<div *ngIf="ticketData" class="middle-row middle-1-1">
+                    <span class="ticket-detail-large middle-class">{{ticketData.TrainId}}</span>
                     
-					<span class="ticket-detail-large middle-class">{{trainData.Name}}</span>
+					<span class="ticket-detail-large middle-class">{{ticketData.Name}}</span>
                     
-					<span class="ticket-detail-large middle-type">{{trainData.ArrivalStation}}</span>
-					<span class="ticket-detail-large middle-class middle-type">{{trainData.DepartureStation}}</span>
+					<span class="ticket-detail-large middle-type">{{ticketData.ArrivalStation}}</span>
+					<span class="ticket-detail-large middle-class middle-type">{{ticketData.DepartureStation}}</span>
 					
 					
 				</div>
@@ -30,11 +30,11 @@
 				    <span class="ticket-label middle-number">Departure Date</span>
                     <span class="ticket-label middle-number">Departure Time</span>
 				</div>
-				<div *ngIf="trainData" class="middle-row middle-2-2">
-					<span class="ticket-detail middle-railcard-spacer">{{trainData.ArrivalDate}}</span>
-					<span class="ticket-detail middle-startdate">{{trainData.ArrivalTime}}</span>
-					<span class="ticket-detail middle-startdate">{{trainData.DepartureDate}}</span>
-					<span class="ticket-detail middle-longnumber">{{trainData.DepartureTime}}</span>
+				<div *ngIf="ticketData" class="middle-row middle-2-2">
+					<span class="ticket-detail middle-railcard-spacer">{{ticketData.ArrivalDate}}</span>
+					<span class="ticket-detail middle-startdate">{{ticketData.ArrivalTime}}</span>
+					<span class="ticket-detail middle-startdate">{{ticketData.DepartureDate}}</span>
+					<span class="ticket-detail middle-longnumber">{{ticketData.DepartureTime}}</span>
 				</div>
 				<div class="middle-row middle-3">
 					<span class="ticket-label middle-from">Passenger Name</span>
@@ -42,11 +42,11 @@
 					<span class="ticket-label middle-valid">Gender</span>
                     <span class="ticket-label middle-valid">Class</span>
 				</div>
-				<div *ngIf="pData"class="middle-row middle-3-3">
-					<span class="ticket-detail middle-from">{{pData.PName}}</span>
-					<span class="ticket-detail middle-valid">{{pData.Age}}</span>
-					<span class="ticket-detail middle-valid">{{pData.gender}}</span>
-                    <span class="ticket-detail middle-valid">{{pData.Class}}</span>
+				<div *ngIf="ticketData" class="middle-row middle-3-3">
+					<span class="ticket-detail middle-from">{{ticketData.PName}}</span>
+					<span class="ticket-detail middle-valid">{{ticketData.Age}}</span>
+					<span class="ticket-detail middle-valid">{{ticketData.gender}}</span>
+                    <span class="ticket-detail middle-valid">{{ticketData.Class}}</span>
 				</div>
 				<div class="middle-row middle-4">
 					<span class="ticket-label middle-to">BookingId</span>
@@ -54,10 +54,10 @@
                     <span class="ticket-label middle-route">Fare</span>
 					
 				</div>
-				<div *ngIf="bookingData"class="middle-row middle-4-4">
-					<span class="ticket-detail middle-to">{{bookingData.BookingId}}</span>
-					<span class="ticket-detail middle-route">{{bookingData.SeatNum}}</span>
-					<span class="ticket-detail middle-route">{{bookingData.fare}}</span>
+				<div *ngIf="ticketData" class="middle-row middle-4-4">
+					<span class="ticket-detail middle-to">{{ticketData.BookingId}}</span>
+					<span class="ticket-detail middle-route">{{ticketData.SeatNum}}</span>
+					<span class="ticket-detail middle-route">{{ticketData.fare}}</span>
 				</div>
 			</div>
 
@@ -69,4 +69,3 @@
 			</div>
 		</div>
         <button class="btn btn-primary" (click)="Download()"> Download PDF</button>
-	</div>

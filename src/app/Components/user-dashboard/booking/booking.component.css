@@ -1,36 +1,50 @@
-td,th {
+th {
     text-align: center;
+    background-color: rgb(192, 218, 229);
   }
  
   td{
-    background-color: aquamarine;
     margin: 12px 12px 12px 12px;
     padding: 12px 12px 12px 12px;
+    text-align: center;
   }
   table{
     border-collapse: separate;
     border-spacing: 1px;
     *border-collapse: expression('separate', cellSpacing='10px');
   }
-  th{
-    background-color: rgb(215, 238, 238);
-  }
+ 
   .passenger{
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
   .train{
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   .fare{
     margin-top: 2rem;
   }
   .container{
    width: 1500px;
-   
-    border: solid 1px;
+   height: 560px;
+   background-color: black;
+  
   }
   button{
-    margin-top: 3rem;
-    margin-left: 30rem;
+    margin-top: 1rem;
+    margin-left: 32rem;
     margin-bottom: 2rem;
+    
   }
+h3{
+  color: rgb(74, 207, 207);
+}
+h1{
+  color: rgb(74, 207, 207);
+  font-size:xx-large;
+}
+.Jumbotron{
+  background-color: black;
+}
+span{
+  color: brown;
+}

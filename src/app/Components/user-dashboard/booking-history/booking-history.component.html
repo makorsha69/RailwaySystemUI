@@ -7,7 +7,6 @@
         <thead>
             <tr>
                 <th>Booking Id</th>
-                
                 <th>Train Id</th>
                 <th>UserId</th>
                 <th>Classes</th>
@@ -16,7 +15,7 @@
                 <th>SeatNum</th>
                 <th>PassengerId</th>
                 <th>Fare</th>
-                
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -31,7 +30,7 @@
                 <td>{{row.PassengerId}}</td>
                 <td>{{row.fare}}</td>
                 <td>
-                    
+                    <a class="gt" (click)="GetTickect(row.PassengerId,row.BookingId,row.TrainId)" >Get Ticket</a>
                     <button (click)="deleteBooking(row.BookingId)" class="btn btn-danger"><mat-icon>cancel</mat-icon></button>
                 </td>
             </tr>

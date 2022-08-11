@@ -2,3 +2,9 @@ button{
     height: 2.5rem;
     width: 3.5rem;
 }
+.gt{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-right: 5px;
+}

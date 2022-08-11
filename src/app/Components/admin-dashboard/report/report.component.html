@@ -1,17 +1,33 @@
 <app-admin-navbar></app-admin-navbar>
+<div class="jumbotron">
 <div class="container">
     <form [formGroup]="formValue">
         <div  class="form-group">
             <br>
             <input class="form-control" id="TrainId"  placeholder="Enter the Train ID" formControlName="TrainId">
         </div>
-        
-        <button class="btn btn-primary" (click)="SearchPassenger()" >Search</button>
-        <button class="btn btn-info" style="margin-left:0.4rem" (click)="Download()"> Download Report</button>
+        <br>
+        <div  class="form-group" >
+                       
+            <mat-form-field class="MatFormFieldControl" appearance="fill">
+                    
+                <select matNativeControl required  formControlName="Status" >
+                    <option  label="--Select Status --"></option>
+                    <option  value="All">ALL</option>
+                  <option value="CONFIRM" >Confirm</option>
+                  <option value="Pending">Pending</option>
+                  <option value="CANCELLED" >Cancelled</option>                     
+                  
+                </select>
+              </mat-form-field>
+              <button class="btn btn-primary" (click)="SearchPassenger()" >Search</button>
+              <button class="btn btn-info" style="margin-left:0.4rem" (click)="Download()"> Download Report</button>
+        </div>
+       
       </form>
 </div>
-<div class="table-div">
-<table class="table mt-4" id="report" #report >
+<div class="table-div" style="margin-left:17rem">
+<table class="table table-dark table-hover" id="report" #report >
     <thead>
         <tr>
             <th>PassengerId</th>
@@ -47,3 +63,6 @@
     
 </table>
 </div>
+<br>
+</div>
+

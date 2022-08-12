@@ -21,6 +21,9 @@ showPass !: boolean;
 showStat !: boolean;
   constructor(private fb:FormBuilder,private shared:SharedService,private nav:NavbarService,private router:Router) { }
 
+  totalLength:any;
+  page:number=1;
+
   ngOnInit(): void {
     this.nav.hide();
     this.nav.doSomethingElseUseful();
@@ -33,6 +36,7 @@ showStat !: boolean;
   SearchPassenger(){
     this.shared.reportStat(this.formValue.value.TrainId,this.formValue.value.Status).subscribe((res)=>{
       console.log(res);
+      this.totalLength=res.length;
       this.reportData=res;
       if(res==null || Object.keys(res).length===0){
         alert("No Report Found");
@@ -44,7 +48,7 @@ showStat !: boolean;
   }
 
   Download(){
-    let pdf = new jsPDF('l','pt','a3');
+    let pdf = new jsPDF('l','pt','a4');
 
     pdf.html(this.el.nativeElement,{
     callback:(pdf)=>{

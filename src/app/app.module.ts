@@ -37,6 +37,7 @@ import { BookingHistoryComponent } from './Components/user-dashboard/booking-his
 import { ReportComponent } from './Components/admin-dashboard/report/report.component';
 import { AddPassengerComponent } from './Components/user-dashboard/add-passenger/add-passenger.component';
 import { GetTicketComponent } from './Components/user-dashboard/get-ticket/get-ticket.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -81,6 +82,7 @@ import { GetTicketComponent } from './Components/user-dashboard/get-ticket/get-t
     MatFormFieldModule,
     MatOptionModule,
     BrowserModule,
+    NgxPaginationModule,
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,

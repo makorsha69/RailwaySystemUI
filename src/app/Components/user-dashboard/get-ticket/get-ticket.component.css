@@ -15,28 +15,37 @@ span {
 	width: 580px;
 	height: 368px;
 	font-family: Monaco;
+	
+	
+}
+h3{
+font-size:small;
+color: red;
+}
+.jumbotron{
+	background-color: black;
 }
 
 .ticket-top {
 	border-top-left-radius: 19px;
 	border-top-right-radius: 19px;
-	background-color:aquamarine;
+	background-color:rgb(26, 103, 148);
 	height: 60px;
 }
 
 .ticket-middle {
 	position: relative;
-	background-color: rgb(255,255,244);
-/* 	background-image: url('./images/ticket-bg.png');  */
-	height: 238px;
+	background-color: rgb(157, 191, 214);
+	/* background-image: url('\src\assets\Images\Logo White.png');  */
+	height: 250px;
+	
 }
 
 .ticket-bottom {
 	border-bottom-left-radius: 19px;
 	border-bottom-right-radius: 19px;
-	background-color:aquamarine;
+	background-color:rgb(26, 103, 148);
 	height: 68px;
-    margin-top: 3rem;
 }
 
 /* Top Strip Positioning */
@@ -186,6 +195,7 @@ span {
 }
 #main{
     margin-left: 20px;
+	
 }
 .ticket-logo {
 /* 	background-image: url('./images/ticket-logo-2-small-transparent.png'); */
@@ -195,10 +205,13 @@ span {
 }
 
 button{
-    margin-top: 6rem;
-    margin-left: 8rem;
+    margin-top: 4rem;
+    margin-left: 17rem;
+	align-items: center;
+	margin-bottom: 2rem;
+
 }
 #ticket{
-    margin-top: 7rem;
-    margin-left: 9rem;
+    margin-top: 0rem;
+    margin-left: 5rem;
 }

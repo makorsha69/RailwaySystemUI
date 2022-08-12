@@ -44,7 +44,7 @@
         </tr>
     </thead>
     <tbody >
-        <tr class="tbody" *ngFor="let row of reportData" >
+        <tr class="tbody" *ngFor="let row of reportData | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength }" >
             <td>{{row.PassengerId}}</td>
             <td>{{row.PName}}</td>
             <td>{{row.Age}}</td>
@@ -62,7 +62,9 @@
  
     
 </table>
+
 </div>
+<pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
 <br>
 </div>
 

@@ -3,7 +3,7 @@
     width:50px;
 }
 .container{
-    margin-top: 6rem;
+    
     padding-bottom: 20%;
 }
 .card1{
@@ -27,4 +27,15 @@ img{
 }
 .card{
     border:none;
+    margin-left: 8rem;
+    margin-top: 6rem;
+    background-color: black;
+}
+.jumbotron{
+    background-color: black;
+}
+.card-label{
+    color: aliceblue;
+    font-size: x-large;
+    padding-bottom: 5px;
 }

@@ -1,9 +1,11 @@
 <app-admin-navbar></app-admin-navbar>
+<div class="jumbotron">
 <div class="container">
     <h2><b>Train Details.</b></h2>
-    <button class="btn btn-success" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter" (click)="clickAddTrain()">Add Train</button>
-    
-    <table class="table mt-4">
+    <button class="btn btn-success" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter" (click)="clickAddTrain()"><mat-icon>library_add</mat-icon> Add Train</button>
+    <br>
+    <br>
+    <table class="table table-dark table-hover">
         <thead>
             <tr>
                 <th>Train Id</th>
@@ -17,6 +19,7 @@
                 <th>Departure Station</th>
                 <th>Distance</th>
                 <th>IsActive</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -32,8 +35,8 @@
                 <td>{{row.distance}}</td>
                 <td>{{row.isActive}}</td>
                 <td>
-                    <button (click)="onEdit(row)" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn btn-danger" style="margin-right: 5px;" style="margin-bottom:2.5px;"><mat-icon>edit</mat-icon></button>
-                    <button (click)="deleteTrain(row.TrainId)" class="btn btn-danger"><mat-icon>delete</mat-icon></button>
+                    <button (click)="onEdit(row)" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn btn-danger" style="margin-right: 5px;" style="margin-bottom:2.5px;"><mat-icon>edit</mat-icon>Edit</button>
+                    <button (click)="deleteTrain(row.TrainId)" class="btn btn-danger"><mat-icon>delete</mat-icon>Delete</button>
                 </td>
             </tr>
         </tbody>
@@ -101,3 +104,4 @@
       </div>
     </div>
   </div>
+</div>

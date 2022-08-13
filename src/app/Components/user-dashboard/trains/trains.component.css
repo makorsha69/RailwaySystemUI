@@ -7,6 +7,16 @@ button{
     width: 5rem;
 }
 input{
-    width:50rem;
+    width:25rem;
+    background-color: aliceblue;
+    
 }
-.tbody:hover {background-color:rgb(210, 228, 222);}
+.jumbotron{
+    background-color: black;
+    padding-bottom: 5rem;
+}
+.table{
+    width: 1200px;
+    margin-left: 5rem;
+    margin-top: 1rem;
+}

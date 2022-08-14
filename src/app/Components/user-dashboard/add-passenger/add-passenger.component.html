@@ -1,5 +1,7 @@
 <app-user-navbar></app-user-navbar>
+<div class="jumbotron">
 <div class="container">
+  <br>
     <h3>Add Passenger Details:</h3>
     <form [formGroup]="formValue" (ngSubmit)="addPassenger()">
 
@@ -48,4 +50,5 @@
         
             <button class="btn btn-primary" [disabled]="!formValue.valid">Submit</button>
         </form>
+</div>
 </div>

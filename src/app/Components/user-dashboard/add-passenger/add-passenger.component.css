@@ -1,15 +1,20 @@
 .form-control{
     border: none;
+    background-color: black;
+    color: aliceblue;
 }
 input{
     border: solid;
+   
+    color: aliceblue;
 }
 .container{
-    margin-top: 20px;
+    margin-top: 0px;
+    
     
 }
 button{
-    margin-top: 5px;
+    margin-top: 2rem;
     margin-bottom: 5px;
     /* margin-left: 65rem; */
     border-radius: 8px;
@@ -17,4 +22,16 @@ button{
 }
 span{
     color: red;
+}
+.jumbotron{
+    background-color: black;
+}
+h3{
+    font-size: xx-large;
+    color: aliceblue;
+}
+.MatFormFieldControl{
+    color: black;
+    background-color: aliceblue;
+    height: 3rem;
 }

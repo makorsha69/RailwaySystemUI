@@ -7,15 +7,16 @@ input{
     border:none;
 }
 .container{
-    margin-top: 3rem;
-    border: solid 1px;
-    box-shadow: 5px 5px rgb(75, 71, 71) ;
+    margin-top: 0rem;
     height: 30rem;
     width: 30rem;
     padding-bottom: 4rem;
+    padding-bottom: 3rem;
+    background-color: antiquewhite;
 }
 img{
     width: 4rem;
+   
 }
 button{
     margin-top: 2.5rem;
@@ -30,4 +31,7 @@ span{
 h2{
     margin-left: 9rem;
     font-size:x-large;
+}
+.jumbotron{
+    background-color: rgb(152, 194, 214);
 }

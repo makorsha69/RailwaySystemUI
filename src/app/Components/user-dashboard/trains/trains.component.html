@@ -3,15 +3,15 @@
 <div class="container">
     <form [formGroup]="formValue">
         <div  class="form-group">
-          <label >To </label>
+          <!-- <label >To </label> -->
             <input class="form-control" id="To"  placeholder="To" formControlName="ArrivalStation">
         </div>
         <div class="form-group">
-          <label >From</label>
+          <!-- <label >From</label> -->
           <input type="text" class="form-control" id="From" placeholder="From" formControlName="DepartureStation">
         </div>
         <div class="form-group">
-        <label for="exampleInputEmail1">Date</label>
+        <!-- <label for="exampleInputEmail1"></label> -->
             <input type="date" class="form-control" id="Date"  placeholder="Date" formControlName="Date">
 
         </div>
@@ -19,7 +19,7 @@
       </form>
 </div>
 
-<table class="table table-dark table-hover">
+<table class="table table-dark table-hover" *ngIf="trainData">
     <thead>
         <tr>
             <th>Train Id</th>

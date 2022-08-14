@@ -76,9 +76,6 @@ export class SharedService {
   bookingHistory(uid:number){
     return this.http.get<any>(this.APIUrl+'/Booking/GetBookingHistory?UserId='+uid);
   }
-  DelbookingHistory(bid:number){
-  return this.http.delete<any>(this.APIUrl+'/Booking/DeleteBooking?BookingId='+bid);
-  }
   saveSeat(val:any){
     return this.http.post<Seats>(this.APIUrl+'/Seat/SaveSeat',val);
   }
@@ -102,5 +99,8 @@ export class SharedService {
   }
   reportStat(tid:number,val:any){
     return this.http.get<any>(this.APIUrl+'/Passenger/GetReportStat?TrainId='+tid+'&Status='+val);
+  }
+  DelbookingHistory(bid:number,tid:number){
+    return this.http.delete<any>(this.APIUrl+'/Booking/DeleteBooking?BookingId='+bid+'&TrainId='+tid);
   }
 }

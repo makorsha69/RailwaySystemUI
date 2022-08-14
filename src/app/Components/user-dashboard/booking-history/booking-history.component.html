@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let row of  booking" >
+            <tr *ngFor="let row of  booking | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength }" >
                 <td>{{row.BookingId}}</td>
                 <td>{{row.TrainId}}</td>
                 <td>{{row.UserId}}</td>
@@ -32,11 +32,12 @@
                 <td>{{row.fare}}</td>
                 <td>
                     <a class="gt" (click)="GetTickect(row.PassengerId,row.BookingId,row.TrainId)" >Get Ticket</a>
-                    <button (click)="deleteBooking(row.BookingId)" class="btn btn-danger"><mat-icon>cancel</mat-icon>Cancel</button>
+                    <button (click)="deleteBooking(row.BookingId,row.TrainId)" class="btn btn-danger"><mat-icon>cancel</mat-icon>Cancel</button>
                 </td>
             </tr>
         </tbody>
     </table> 
   
   </div>
+  <pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
 </div>

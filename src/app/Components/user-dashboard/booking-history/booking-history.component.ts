@@ -12,6 +12,8 @@ import { SharedService } from 'src/app/shared.service';
   styleUrls: ['./booking-history.component.css']
 })
 export class BookingHistoryComponent implements OnInit {
+  totalLength:any;
+  page:number=1
   userID: any;
   bModel:booking = new booking();
   booking!:any;
@@ -32,6 +34,7 @@ export class BookingHistoryComponent implements OnInit {
     
     this.shared.bookingHistory(this.userID).subscribe(res=>{
       this.booking=res;
+      this.totalLength=res.length;
      
       console.log(res);
     });
@@ -60,14 +63,18 @@ export class BookingHistoryComponent implements OnInit {
   
   }
  
-  deleteBooking(id:number){
-    if(confirm('Are you sure?')){
-      console.log(id);
-      this.shared.DelbookingHistory(id).subscribe(data=>{
-        console.log(data);
-        
-      });
-      location.reload();
-    }
-  }
+  deleteBooking(id:number,tid:number){
+    this.shared.DelbookingHistory(id,tid).subscribe(data=>{
+      if(data.Status==='CANCELLED'){
+        alert("Already Cancelled");
+      }
+      else{
+        alert("Are you sure?")
+      }
+      console.log(data);
+      
+    });
+     location.reload();
+  
+}
 }

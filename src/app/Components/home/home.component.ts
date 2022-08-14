@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarService } from 'src/app/navbar.service';
 // import { Train } from 'src/app/Models/train.model';
 import { SharedService } from 'src/app/shared.service';
@@ -15,7 +16,13 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private shared:SharedService,private fb:FormBuilder,private router:Router, private nav:NavbarService) { }
+  constructor(private shared:SharedService,private fb:FormBuilder,private router:Router, private nav:NavbarService,config: NgbCarouselConfig) { 
+
+    config.interval = 2000;
+    config.keyboard = true;
+    config.pauseOnHover = true;
+    
+  }
 
   ngOnInit(): void {
 

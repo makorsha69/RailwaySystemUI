@@ -7,6 +7,9 @@
     
     height: 40rem;
   }
+.picsum-img-wrapper{
+    height: 35rem;
+}
 
 .banner_content {
     position: relative;

@@ -18,8 +18,13 @@ export class TicketComponent implements OnInit {
 
   ngOnInit(): void {
     this.nav.hide();
-    this.loadData();
+    // this.loadData();
     this.getBookingById();
+    if (!localStorage.getItem('BookingId')) { 
+      location.reload() 
+    } else {
+      this.loadData();
+    }
   }
 loadData(){
   var shareData:any=localStorage.getItem('trainId');

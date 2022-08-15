@@ -18,7 +18,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private shared:SharedService,private fb:FormBuilder,private router:Router, private nav:NavbarService,config: NgbCarouselConfig) { 
 
-    config.interval = 2000;
+    config.interval = 3000;
+    config.showNavigationArrows = false;
     config.keyboard = true;
     config.pauseOnHover = true;
     

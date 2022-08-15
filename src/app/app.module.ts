@@ -38,6 +38,7 @@ import { ReportComponent } from './Components/admin-dashboard/report/report.comp
 import { AddPassengerComponent } from './Components/user-dashboard/add-passenger/add-passenger.component';
 import { GetTicketComponent } from './Components/user-dashboard/get-ticket/get-ticket.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PtransactionComponent } from './Components/user-dashboard/ptransaction/ptransaction.component';
 
 
 
@@ -66,6 +67,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BookingHistoryComponent,
     ReportComponent,
     GetTicketComponent,
+    PtransactionComponent,
    
     
   ],
@@ -95,6 +97,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
       {path:'login/user/dashboard/add-passenger', component:AddPassengerComponent,canActivate:[AuthGuard]},
       {path:'login/user/dashboard/booking',component:BookingComponent,canActivate:[AuthGuard]},
       {path:'login/user/dashboard/transaction',component:TransactionComponent,canActivate:[AuthGuard]},
+      {path:'login/user/dashboard/ptransaction',component:PtransactionComponent,canActivate:[AuthGuard]},
       {path:'login/user/dashboard/booking-history',component:BookingHistoryComponent,canActivate:[AuthGuard]},
       {path:'login/admin/dashboard', component:AdminDashboardComponent, canActivate:[AuthGuard]},
       {path:'login/user/dashboard', component:UserDashboardComponent, canActivate:[AuthGuard]},

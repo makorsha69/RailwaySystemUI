@@ -32,7 +32,8 @@
                 <td>{{row.fare}}</td>
                 <td>
                     <a class="gt" (click)="GetTickect(row.PassengerId,row.BookingId,row.TrainId)" >Get Ticket</a>
-                    <button (click)="deleteBooking(row.BookingId,row.TrainId)" class="btn btn-danger"><mat-icon>cancel</mat-icon>Cancel</button>
+                    <button class="btn btn-success" (click)="payment(row.PassengerId)">Payment</button>
+                    <button (click)="deleteBooking(row.PassengerId)" class="btn btn-danger"><mat-icon>cancel</mat-icon></button>
                 </td>
             </tr>
         </tbody>

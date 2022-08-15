@@ -48,7 +48,7 @@ PayNow(){
   this.passengerId=this.pId.PassengerId;
   console.log(this.passengerId);
  // this.fare=JSON.parse(shareData);
-  this.shared.GetBookingId(this.passengerId).subscribe((res)=>{
+  this.shared.GetBookingPId(this.passengerId).subscribe((res)=>{
     this.shared.confirmBooking(res).subscribe((result)=>{
       console.log(result);
       alert("Booking Confirmed");

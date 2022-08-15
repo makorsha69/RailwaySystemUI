@@ -12,8 +12,6 @@ import { SharedService } from 'src/app/shared.service';
   styleUrls: ['./booking-history.component.css']
 })
 export class BookingHistoryComponent implements OnInit {
-  totalLength:any;
-  page:number=1
   userID: any;
   bModel:booking = new booking();
   booking!:any;
@@ -22,10 +20,12 @@ export class BookingHistoryComponent implements OnInit {
   showConfirm:boolean;
   
   constructor(private shared:SharedService,private nav:NavbarService,private router:Router) { }
-
+  totalLength:any;
+  page:number=1;
   ngOnInit(): void {
     this.nav.hide();
     this.getBookingHistory();
+    
   }
   
   getBookingHistory(){
@@ -35,7 +35,6 @@ export class BookingHistoryComponent implements OnInit {
     this.shared.bookingHistory(this.userID).subscribe(res=>{
       this.booking=res;
       this.totalLength=res.length;
-     
       console.log(res);
     });
   }
@@ -44,6 +43,7 @@ export class BookingHistoryComponent implements OnInit {
       this.showConfirm=true;
     }
   }
+ 
   GetTickect(pid:number,bid:number,tid:number){
     this.shared.getTicket(pid,bid,tid).subscribe((res)=>{
       console.log(res);
@@ -62,19 +62,41 @@ export class BookingHistoryComponent implements OnInit {
   });
   
   }
+
+payment(pid:any){
+ this.shared.GetBookingPId(pid).subscribe((result)=>{
+  this.shared.getBookingbyId(result).subscribe((a)=>{
+    console.log(a);
  
-  deleteBooking(id:number,tid:number){
-    this.shared.DelbookingHistory(id,tid).subscribe(data=>{
-      if(data.Status==='CANCELLED'){
-        alert("Already Cancelled");
+   
+    if(a.Status==='CONFIRM' || a.Status==='CANCELLED'){
+      alert("Payment not allowed");
+    }
+    else{
+      this.shared.confirmBooking(a.BookingId).subscribe((res)=>{localStorage.setItem('payment',JSON.stringify(res));});
+      this.router.navigateByUrl('/login/user/dashboard/ptransaction'); 
       }
-      else{
-        alert("Are you sure?")
-      }
-      console.log(data);
       
+    })
     });
-     location.reload();
+  }
   
-}
+
+deleteBooking(pid:number){
+  this.shared.GetBookingPId(pid).subscribe((result)=>{
+    this.shared.getBookingbyId(result).subscribe((a)=>{
+      console.log(a);
+        if(a.Status==='CANCELLED'){
+          alert("Already Cancelled");
+        }
+        else{
+          alert("Are you sure?");
+          this.shared.DelbookingHistory(a.BookingId,a.TrainId).subscribe(data=>{ location.reload(); });
+        }
+      });
+    });
+ 
+      
+    
+  }
 }

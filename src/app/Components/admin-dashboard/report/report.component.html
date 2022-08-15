@@ -2,11 +2,15 @@
 <div class="jumbotron">
 <div class="container">
     <form [formGroup]="formValue">
-        <div  class="form-group">
+        <div style="width: 50rem;" class="form-group">
             <br>
-            <input class="form-control" id="TrainId"  placeholder="Enter the Train ID" formControlName="TrainId">
-        </div>
-        <br>
+            <select formControlName="TrainId" class="form-control">  
+              <option disabled>Select Train</option>  
+              <option> Enter Train Details</option>  
+              <option  *ngFor="let row of traindata">{{row.TrainId}} {{row.Name}} -- {{row.DepartureStation}} To {{row.ArrivalStation}}</option>  
+          </select> 
+          </div>
+        
         <div  class="form-group" >
                        
             <mat-form-field class="MatFormFieldControl" appearance="fill">

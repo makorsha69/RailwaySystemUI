@@ -37,6 +37,16 @@ h2{
     font-family: 'Montserrat', sans-serif;
     margin-left: 12rem;
  }
+ h3{
+    font-size: xx-large;
+    font-style: italic;
+ }
+ p{
+    font-size: larger;
+    font-style: italic;
+    /* text-shadow: 2px 2px 8px #000000; */
+}
+
  
  .vh-100{
     

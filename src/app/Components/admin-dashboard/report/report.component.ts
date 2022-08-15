@@ -19,8 +19,10 @@ report:Report = new Report();
 reportData:any;
 showPass !: boolean;
 showStat !: boolean;
-  constructor(private fb:FormBuilder,private shared:SharedService,private nav:NavbarService,private router:Router) { }
-
+traindata:any;
+split:any;
+  constructor(private fb:FormBuilder,private shared:SharedService,private nav:NavbarService, private router:Router) { }
+ 
   totalLength:any;
   page:number=1;
 
@@ -31,10 +33,17 @@ showStat !: boolean;
     this.formValue=this.fb.group({
       TrainId:[''],
       Status:[''],
-    })
+    });
+    this.getAllTrain();
+    
   }
+   
   SearchPassenger(){
-    this.shared.reportStat(this.formValue.value.TrainId,this.formValue.value.Status).subscribe((res)=>{
+    this.split= this.formValue.value.TrainId.split(" ");
+    var trainId=this.split[0];
+    console.log(trainId);
+    console.log(this.formValue.value.TrainId);
+    this.shared.reportStat(trainId,this.formValue.value.Status).subscribe((res)=>{
       console.log(res);
       this.totalLength=res.length;
       this.reportData=res;
@@ -48,12 +57,17 @@ showStat !: boolean;
   }
 
   Download(){
-    let pdf = new jsPDF('l','pt','a4');
+    let pdf = new jsPDF('l','pt','a3');
 
     pdf.html(this.el.nativeElement,{
     callback:(pdf)=>{
-    pdf.save("report.pdf");
+    pdf.save("Report.pdf");
       }
     });
+  }
+  getAllTrain(){
+    this.shared.getAllTrains().subscribe(res=>{
+      this.traindata = res;
+    })
   }
 }

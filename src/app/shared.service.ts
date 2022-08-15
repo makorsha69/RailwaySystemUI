@@ -82,7 +82,7 @@ export class SharedService {
   report(tid:number){
     return this.http.get<any>(this.APIUrl+'/Passenger/GetReport?TrainId='+tid);
   }
-  GetBookingId(pid:number){
+  GetBookingPId(pid:number){
     return this.http.get<any>(this.APIUrl+'/Booking/GetBookingId?PassengerId='+pid);
   }
   confirmBooking(bid:any){
